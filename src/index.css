@@ -1,0 +1,223 @@
+:root {
+    /* Colores principales */
+    --tory-blue-50: #edf9ff;
+    --tory-blue-100: #d6efff;
+    --tory-blue-200: #b5e6ff;
+    --tory-blue-300: #83d7ff;
+    --tory-blue-400: #49bfff;
+    --tory-blue-500: #1f9eff;
+    --tory-blue-600: #077fff;
+    --tory-blue-700: #0167f4;
+    --tory-blue-800: #0852c5;
+    --tory-blue-900: #0f4fa9;
+    --tory-blue-950: #0e2c5d;
+    --text-primary-color: #4e4e5b;
+
+    /* Colores secundarios */
+    --background-color: #131419;
+    --button-primary-bg: var(--tory-blue-700);
+    --button-primary-text: #fff;
+    --button-disabled-bg: var(--tory-blue-100);
+    --button-disabled-text: var(--tory-blue-600);
+    --main-title-color: #fff;
+    --code-title-color: #fff;
+    --code-description-bg: #202223;
+    --code-description-color: #fff;
+    --code-view-bg: #202223;
+    --error-color: #f04d4d;
+}
+
+* {
+    /* Box Model */
+    box-sizing: border-box;
+}
+
+body {
+    /* Tipografía */
+    font-family: "Poppins";
+    /* Colores y Texto */
+    background-color: var(--background-color);
+    color: var(--text-primary-color);
+}
+
+code {
+    /* Tipografía */
+    font-family: "Roboto Mono", monospace;
+}
+
+html {
+    /* Comportamiento */
+    scroll-behavior: smooth;
+}
+
+/* Botones */
+.button {
+    /* Box Model */
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    outline: none;
+    /* Tipografía */
+    font-family: "Poppins";
+    /* Otros estilos */
+    cursor: pointer;
+    text-decoration: none;
+    /* Colores */
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    transition: all 1s;
+}
+
+.button--primary {
+    /* Colores específicos */
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+}
+
+.button:disabled {
+    /* Colores específicos para botón deshabilitado */
+    background-color: var(--button-disabled-bg);
+    color: var(--button-disabled-text);
+    cursor: not-allowed;
+}
+
+/* Secciones principales */
+.main__section {
+    /* Box Model */
+    margin: 0 auto;
+    width: 50%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 1rem;
+    /* Texto */
+    text-align: center;
+    /* Colores y Texto */
+    background-color: var(--background-color);
+    color: var(--text-primary-color);
+}
+
+.main__title {
+    /* Tipografía */
+    font-size: 3rem;
+    font-weight: 600;
+    /* Colores */
+    color: var(--main-title-color);
+    margin: 0;
+}
+
+/* Secciones de código */
+.code__section {
+    /* Box Model */
+    margin: 0 auto;
+    width: auto;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    padding-top: 2rem;
+    gap: 3rem;
+    /* Texto */
+    text-align: center;
+}
+
+.code__header {
+    width: 50%;
+}
+
+.code__title {
+    /* Tipografía */
+    font-size: 1.75rem;
+    font-weight: 600;
+    /* Colores */
+    color: var(--code-title-color);
+    margin: 0;
+}
+
+.code__content {
+    /* Box Model */
+    position: relative;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.code__data {
+    /* Box Model */
+    position: relative;
+}
+
+.code__description {
+    /* Box Model */
+    background-color: var(--code-description-bg);
+    outline: none;
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    /* Colores */
+    color: var(--code-description-color);
+    /* Tipografía */
+    font-family: "Poppins";
+}
+
+.code__view {
+    /* Box Model */
+    background-color: var(--code-view-bg);
+    outline: none;
+    border-radius: 6px;
+    /* Colores */
+    color: var(--code-description-color); /* Usamos el mismo color que en la descripción */
+    /* Tipografía */
+    font-family: "Roboto Mono", monospace;
+}
+
+.code__button {
+    /* Posición */
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.code__spinner {
+    /* Posición */
+    position: absolute;
+    top: 40%;
+    left: 45%;
+}
+
+.footer {
+    text-align: center;
+    color: var(--code-title-color);
+    padding: 2rem;
+}
+
+/* Clase de error */
+.element--error {
+    /* Colores */
+    color: var(--error-color);
+    /* Box Model */
+    border: 2px solid transparent;
+    /* Animación */
+    animation: flashing 3s linear infinite;
+    /* Texto */
+    text-align: center;
+}
+
+
+.element--loading {
+    opacity: 0.25;
+}
+
+@keyframes flashing {
+    0% {
+        border-color: var(--error-color);
+    }
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: var(--error-color);
+    }
+}
+
